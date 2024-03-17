@@ -1,0 +1,40 @@
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Executables
+*.exe
+*.out
+
+# Go binary
+/bin/
+
+# Go build cache
+/.cache/
+
+# Go test cache
+/.testcache/
+
+# Go test coverage
+/coverage/
+
+# Dependency directories (vendoring)
+/vendor/
+/Godeps/
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+/*.out
+
+# Log files
+*.log
+
+# IDE specific files
+.idea/
+.vscode/
+
+# macOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
