@@ -52,6 +52,20 @@ func (suite *CPFTestSuite) TestPlainCPFNumber() {
 	assert.Equal(suite.T(), suite.PlainValidCPFNumber, cpf.String())
 }
 
+func (suite *CPFTestSuite) TestIncompleteCPFNumber() {
+	number := "123123123"
+	cpf := NewCPF(number)
+	assert.Equal(suite.T(), false, cpf.IsValid())
+	assert.Equal(suite.T(), number, cpf.Formatted())
+}
+
+func (suite *CPFTestSuite) TestAllEqualCPFNumber() {
+	number := "999.999.999-99"
+	cpf := NewCPF(number)
+	assert.Equal(suite.T(), false, cpf.IsValid())
+	assert.Equal(suite.T(), "99999999999", cpf.Formatted())
+}
+
 func TestCPFTestSuite(t *testing.T) {
 	suite.Run(t, new(CPFTestSuite))
 }
